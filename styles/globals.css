@@ -1,0 +1,77 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+/* ############Landing Page##################*/
+.gridcontainer {
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10% 5%;
+  align-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.grid1 {
+  grid-area: 1 / 2 / 1 / 2;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 3px solid black;
+}
+.grid2 {
+  grid-area: 1 / 4 / 1 / 4;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 3px solid black;
+}
+.grid3 {
+  grid-area: 1 / 6 / 1 / 6;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 3px solid black;
+}
+.grid4 {
+  grid-area: 2 / 2 / 2 / 2;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 3px solid black;
+}
+.grid5 {
+  grid-area: 2 / 4 / 2 / 4;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 3px solid black;
+}
+.grid6 {
+  grid-area: 2 / 6 / 2 / 6;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 3px solid black;
+}
+.gridItemContainer {
+  height: 250px;
+  width: 250px;
+  background-color: transparent;
+}
+
+.gridItemContainerInfo {
+  text-align: center;
+}
+.MarktingSlogan {
+  position: absolute;
+  color: whitesmoke;
+  z-index: 44;
+  bottom: 300px;
+  left: 800px;
+  letter-spacing: 2px;
+  font-size: 200%;
+  padding: 40px 50px;
+  border: 3px solid white;
+}
+/* ############Product Page##################*/

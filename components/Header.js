@@ -21,14 +21,24 @@ export default function Header() {
       </Link>
       <div
         style={{
-          fontSize: 30,
-          letterSpacing: 1,
+          fontSize: 50,
+          letterSpacing: 1.8,
+          marginTop: '-10px',
+          padding: 0,
+          fontFamily: 'Vollkorn SC',
+          borderBottom: '2px white solid',
         }}
       >
         Roasteria
       </div>
       <div>
-        <a>1</a>
+        <a
+          style={{
+            color: 'white',
+          }}
+        >
+          1
+        </a>
 
         <Link href="/users/user-list">
           <a>

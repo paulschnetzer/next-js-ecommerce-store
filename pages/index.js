@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-
+import Link from 'next/link';
 export default function LandingPage() {
   return (
     <Layout>
@@ -12,6 +12,7 @@ export default function LandingPage() {
           RELEASE THE BEAN <br /> INSIDE YOU
         </p>
       </div>
+
       <img
         src="/coffe-cup-background.jpg"
         alt="Logo"
@@ -24,73 +25,95 @@ export default function LandingPage() {
       <section>
         <container className="gridcontainer">
           <div className="grid1">
-            <div className="gridItemContainer">
-              <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
-              <div className="gridItemContainerInfo">
-                <p>
-                  Light Roast Coffee<br></br>
-                  3,50$/100g
-                </p>
-              </div>
-            </div>
+            <Link href="/1">
+              <a>
+                <div className="gridItemContainer">
+                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <div className="gridItemContainerInfo">
+                    <p>
+                      Light Roast Coffee<br></br>
+                      3,50$/100g
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           </div>
 
           <div className="grid2">
-            {' '}
-            <div className="gridItemContainer">
-              <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
-              <div className="gridItemContainerInfo">
-                <p>
-                  Dark Roast Coffee<br></br>
-                  2,90$/100g
-                </p>
-              </div>
-            </div>
+            <Link href="/2">
+              <a>
+                <div className="gridItemContainer">
+                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <div className="gridItemContainerInfo">
+                    <p>
+                      Dark Roast Coffee<br></br>
+                      2,90$/100g
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           </div>
           <div className="grid3">
-            {' '}
-            <div className="gridItemContainer">
-              <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
-              <div className="gridItemContainerInfo">
-                <p>
-                  Medium Roast Coffee<br></br>
-                  3,80$/100g
-                </p>
-              </div>
-            </div>
+            <Link href="/3">
+              <a>
+                <div className="gridItemContainer">
+                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <div className="gridItemContainerInfo">
+                    <p>
+                      Medium Roast Coffee<br></br>
+                      3,80$/100g
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           </div>
           <div className="grid4">
-            <div className="gridItemContainer">
-              <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
-              <div className="gridItemContainerInfo">
-                <p>
-                  Columbian Coffee<br></br>
-                  3,20$/100g
-                </p>
-              </div>
-            </div>
+            <Link href="/4">
+              <a>
+                <div className="gridItemContainer">
+                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <div className="gridItemContainerInfo">
+                    <p>
+                      Columbian Coffee<br></br>
+                      3,20$/100g
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           </div>
           <div className="grid5">
-            <div className="gridItemContainer">
-              <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
-              <div className="gridItemContainerInfo">
-                <p>
-                  Brazilian Coffee<br></br>
-                  3,10$/100g
-                </p>
-              </div>
-            </div>
+            <Link href="/5">
+              <a>
+                <div className="gridItemContainer">
+                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <div className="gridItemContainerInfo">
+                    <p>
+                      Brazilian Coffee<br></br>
+                      3,10$/100g
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           </div>
           <div className="grid6">
-            <div className="gridItemContainer">
-              <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
-              <div className="gridItemContainerInfo">
-                <p>
-                  Decaf Coffee<br></br>
-                  4,50$/100g
-                </p>
-              </div>
-            </div>
+            <Link href="/6">
+              <a>
+                <div className="gridItemContainer">
+                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <div className="gridItemContainerInfo">
+                    <p>
+                      Decaf Coffee<br></br>
+                      4,50$/100g
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           </div>
         </container>
       </section>

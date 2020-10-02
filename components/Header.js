@@ -41,7 +41,7 @@ export default function Header(props) {
           1
         </a>
 
-        <Link href="/users/user-list">
+        <Link href="/checkout">
           <a>
             <img
               src="/shopping-cart.svg"

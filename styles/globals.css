@@ -49,12 +49,22 @@ button:hover {
   justify-content: space-between;
   margin-bottom: 200px;
 }
+.grid1:hover,
+.grid2:hover,
+.grid3:hover,
+.grid3:hover,
+.grid4:hover,
+.grid5:hover,
+.grid6:hover {
+  opacity: 0.8;
+}
 .grid1 {
   grid-area: 1 / 2 / 1 / 2;
   background-color: rgb(247, 247, 247);
   border-bottom: 3px solid black;
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
 }
 .grid2 {
   grid-area: 1 / 4 / 1 / 4;
@@ -62,6 +72,7 @@ button:hover {
   border-bottom: 3px solid black;
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
 }
 .grid3 {
   grid-area: 1 / 6 / 1 / 6;
@@ -69,6 +80,7 @@ button:hover {
   border-bottom: 3px solid black;
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
 }
 .grid4 {
   grid-area: 2 / 2 / 2 / 2;
@@ -76,6 +88,7 @@ button:hover {
   border-bottom: 3px solid black;
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
 }
 .grid5 {
   grid-area: 2 / 4 / 2 / 4;
@@ -83,6 +96,7 @@ button:hover {
   border-bottom: 3px solid black;
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
 }
 .grid6 {
   grid-area: 2 / 6 / 2 / 6;
@@ -90,6 +104,7 @@ button:hover {
   border-bottom: 3px solid black;
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
 }
 .gridItemContainer {
   height: 250px;
@@ -256,4 +271,19 @@ button:hover {
   justify-content: space-around;
   align-items: center;
   border-radius: 20px 180px 20px 50px;
+}
+.Shipping {
+  width: 20%;
+  margin: 0px 0px 0px 100px;
+}
+
+.form__field {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+
+  padding: 7px 0;
+  background: transparent;
+  margin: 10px 0px;
 }

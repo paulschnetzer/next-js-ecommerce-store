@@ -22,34 +22,34 @@ export default function Footer() {
         >
           <div>
             <img
-              src="/logo.svg"
+              src="/twitter.svg"
               alt="Girl in a jacket"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
             />
           </div>
           <div>
             <img
-              src="/logo.svg"
+              src="/facebook.svg"
               alt="Girl in a jacket"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
             />
           </div>
           <div>
             <img
-              src="/logo.svg"
+              src="/youtube.svg"
               alt="Girl in a jacket"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
             />
           </div>
           <div>
             <img
-              src="/logo.svg"
+              src="/email.svg"
               alt="Girl in a jacket"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
             />
           </div>
         </div>

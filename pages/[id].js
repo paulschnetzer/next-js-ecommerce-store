@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import { coffeTypes } from '../util/coffeTypes';
+import Link from 'next/link';
 
 export default function User(props) {
   const coffee = coffeTypes.find((currentcoffee) => {
@@ -34,7 +35,11 @@ export default function User(props) {
               </p>
               <div>
                 <span>{coffee.price}$/100g</span>
-                <button>ADD to Shopping Card</button>
+                <Link href="/payment">
+                  <a>
+                    <button>ADD to Shopping Card</button>
+                  </a>
+                </Link>
               </div>
             </div>
           </container>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-export default function Header() {
+export default function Header(props) {
   return (
     <header
       style={{
@@ -8,14 +8,15 @@ export default function Header() {
         padding: 30,
         background: '#190000',
         borderBottom: '2px solid white',
-
         color: 'whitesmoke',
+        paddingLeft: 40,
+        paddingRight: 40,
       }}
     >
-      <Link href="/users">
+      <Link href="/">
         <a>
           <div>
-            <img src="/logo.svg" alt="Logo" width="40" height="40" />
+            <img src="/logo.svg" alt="Logo" width="50" height="50" />
           </div>
         </a>
       </Link>
@@ -45,8 +46,8 @@ export default function Header() {
             <img
               src="/shopping-cart.svg"
               alt="Girl in a jacket"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
             />
           </a>
         </Link>

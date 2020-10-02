@@ -25,14 +25,19 @@ button {
   background-color: #440f0f;
   border: none;
   color: white;
-  padding: 15px 15px;
+  padding: 20px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 7px 30px 7px 20px;
+  transition: 0.5s;
 }
+button:hover {
+  background-color: rgb(123, 35, 35);
+}
+
 /* ############Landing Page##################*/
 .gridcontainer {
   display: grid;
@@ -112,7 +117,10 @@ button {
 /* ############Product Page##################*/
 .productContainer {
   height: 100vh;
-  background-color: whitesmoke;
+  background-image: url('/coffee-background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   margin-top: -2px;
   display: flex;
   justify-content: center;
@@ -121,7 +129,7 @@ button {
 .productContainer container {
   height: 80vh;
   width: 80vw;
-  background-color: rgb(221, 210, 210);
+  background-color: rgb(221, 210, 210, 0.95);
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: space-around;
@@ -155,4 +163,97 @@ button {
 .productContainer span {
   font-weight: 600;
   letter-spacing: 1.5px;
+}
+
+/*########PaymentForm###########*/
+.paymentContainer {
+  height: 90vh;
+  background-image: url('/coffee-background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paymentContainer container {
+  padding-left: 50px;
+  height: 60vh;
+  width: 60vw;
+  background-color: rgba(221, 210, 210, 0.95);
+  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px 180px 20px 50px;
+}
+
+.paymentContainer button {
+  margin: 25px 100px 25px 0;
+  height: 70px;
+  width: 200px;
+  font-size: 110%;
+}
+
+.paymentContainerLeft {
+  display: flex;
+  justify-content: space-around;
+}
+.paymentContainerLeft div {
+  width: 200px;
+}
+
+.paymentContainerLeftList {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+}
+.paymentContainerLeft p {
+  margin: 10px 0 10px 0;
+}
+
+.paymentContainerTotalPrice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+
+  margin-left: 40px;
+}
+.paymentContainerTotalPrice p {
+  width: 200px;
+  padding-left: 20px;
+}
+.paymentContainerTotalPrice h2 {
+  width: 200px;
+}
+.h_line {
+  width: 80%;
+  margin-left: 10px;
+  height: 3px;
+  background: rgb(0, 0, 0);
+}
+/*########Checkout###########*/
+
+.checkoutContainer {
+  height: 120vh;
+  background-image: url('/coffee-background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutContainer container {
+  height: 100vh;
+  width: 60vw;
+  background-color: rgb(221, 210, 210, 0.95);
+  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px 180px 20px 50px;
 }

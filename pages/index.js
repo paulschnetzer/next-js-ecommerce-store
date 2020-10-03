@@ -7,20 +7,13 @@ export default function LandingPage() {
       <Head>
         <title>Home</title>
       </Head>
+
+      <div className="LandingPageBackground"></div>
       <div className="MarktingSlogan">
         <p>
           RELEASE THE BEAN <br /> INSIDE YOU
         </p>
       </div>
-
-      <img
-        src="/coffe-cup-background.jpg"
-        alt="Logo"
-        style={{
-          width: '100%',
-          marginBottom: '-5px',
-        }}
-      />
 
       <section>
         <container className="gridcontainer">

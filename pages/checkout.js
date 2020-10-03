@@ -74,6 +74,32 @@ export default function User() {
                 />
               </div>
             </div>
+            <div className="checkoutContainerPrice">
+              <div>
+                <p className="checkoutContainerPriceProduct">Product1</p>
+                <p>3,21</p>
+              </div>
+              <div>
+                <p className="checkoutContainerPriceProduct">Product1</p>
+                <p>3,21</p>
+              </div>
+              <div>
+                <p className="checkoutContainerPriceProduct">Product1</p>
+                <p>3,21</p>
+              </div>
+              <div className="h_line"></div>
+              <div>
+                <p className="checkoutContainerTotalProduct">Total Price</p>
+                <p>31,21</p>
+              </div>
+              <div>
+                <Link href="/checkout">
+                  <a>
+                    <button>BUY NOW</button>
+                  </a>
+                </Link>
+              </div>
+            </div>
           </container>
         </div>
       </Layout>

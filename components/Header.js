@@ -7,7 +7,6 @@ export default function Header(props) {
         justifyContent: 'space-between',
         padding: 30,
         background: '#190000',
-        borderBottom: '2px solid white',
         color: 'whitesmoke',
         paddingLeft: 40,
         paddingRight: 40,
@@ -15,24 +14,76 @@ export default function Header(props) {
     >
       <Link href="/">
         <a>
-          <div>
-            <img src="/logo.svg" alt="Logo" width="50" height="50" />
+          <div
+            style={{
+              backgroundColor: 'rgb(16, 79, 33)',
+              marginTop: -30,
+              marginLeft: 40,
+              paddingBottom: 30,
+              paddingTop: 90,
+              paddingLeft: 30,
+              paddingRight: 30,
+              position: 'absolute',
+              borderRadius: '0px 0px 60px 60px ',
+            }}
+          >
+            <img src="/logo.svg" alt="Logo" width="230" />
+          </div>
+        </a>
+      </Link>
+      <Link href="/">
+        <a
+          style={{
+            color: 'white',
+            marginTop: 15,
+            marginLeft: '50%',
+            fontSize: '80%',
+
+            width: '4.5%',
+            textAlign: 'center',
+            paddingBottom: '-50px',
+          }}
+        >
+          <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
+            HOME
+          </div>
+        </a>
+      </Link>
+      <Link href="/checkout">
+        <a
+          style={{
+            color: 'white',
+            marginTop: 15,
+            fontSize: '80%',
+            width: '7%',
+            textAlign: 'center',
+          }}
+        >
+          <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
+            CHECKOUT
+          </div>
+        </a>
+      </Link>
+      <Link href="/">
+        <a
+          style={{
+            color: 'white',
+            marginTop: 15,
+            fontSize: '80%',
+            width: '6%',
+            textAlign: 'center',
+          }}
+        >
+          <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
+            ABOUT US
           </div>
         </a>
       </Link>
       <div
         style={{
-          fontSize: 50,
-          letterSpacing: 1.8,
-          marginTop: '-10px',
-          padding: 0,
-          fontFamily: 'Vollkorn SC',
-          borderBottom: '2px white solid',
+          marginRight: 15,
         }}
       >
-        Roasteria
-      </div>
-      <div>
         <a
           style={{
             color: 'white',
@@ -41,11 +92,11 @@ export default function Header(props) {
           1
         </a>
 
-        <Link href="/checkout">
+        <Link href="/payment">
           <a>
             <img
               src="/shopping-cart.svg"
-              alt="Girl in a jacket"
+              alt="Shopping cart"
               width="50"
               height="50"
             />

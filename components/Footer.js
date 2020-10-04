@@ -8,7 +8,6 @@ export default function Footer() {
           justifyContent: 'center',
           padding: 30,
           background: '#190000',
-
           color: 'whitesmoke',
         }}
       >

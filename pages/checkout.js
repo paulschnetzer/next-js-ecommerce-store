@@ -93,7 +93,7 @@ export default function User() {
                 <p>31,21</p>
               </div>
               <div>
-                <Link href="/checkout">
+                <Link href="/thanks">
                   <a>
                     <button>BUY NOW</button>
                   </a>

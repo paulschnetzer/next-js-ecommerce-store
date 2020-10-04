@@ -9,6 +9,7 @@ body {
   letter-spacing: 1.4;
   word-spacing: 1.4;
   line-height: 1.4;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 * {
@@ -19,7 +20,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: black;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 button {
@@ -60,7 +61,8 @@ button:hover {
   letter-spacing: 2px;
   font-size: 200%;
   padding: 40px 50px;
-
+  border: 2px black solid;
+  border-right: none;
   border-radius: 20px 0 0 90px;
 }
 .gridcontainer {
@@ -72,7 +74,7 @@ button:hover {
   align-content: space-around;
   justify-content: space-between;
   margin-bottom: 200px;
-  margin: 100px 10% 200px 10%;
+  margin: 150px 10% 250px 10%;
 }
 .grid1:hover,
 .grid2:hover,
@@ -132,7 +134,7 @@ button:hover {
   transition: 0.4s;
 }
 .gridItemContainer {
-  height: 250px;
+  height: 260px;
   width: 250px;
   background-color: transparent;
 }
@@ -322,4 +324,34 @@ button:hover {
 .checkoutContainer button {
   width: 300px;
   margin: 30px 0 0 20px;
+}
+
+/*##########thank you##########*/
+.thanksContainer {
+  height: 65vh;
+  background-image: url('/coffee-background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thanksContainer container {
+  padding-left: 50px;
+  padding: 50px;
+  line-height: 170%;
+  width: 60vw;
+  background-color: rgba(221, 210, 210, 0.95);
+  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 100px 300px 100px 300px;
+}
+
+.thanksContainer button {
+  border-radius: 50% 10% 10% 50%;
+  margin: 0px 0px 90px -30px;
 }

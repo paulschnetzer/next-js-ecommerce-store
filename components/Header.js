@@ -5,8 +5,9 @@ export default function Header(props) {
       style={{
         display: 'flex',
         justifyContent: 'space-between',
-        padding: 30,
-        background: '#190000',
+        alignItems: 'center',
+        padding: 20,
+        background: 'rgb(17, 18, 19)',
         color: 'whitesmoke',
         paddingLeft: 40,
         paddingRight: 40,
@@ -17,10 +18,10 @@ export default function Header(props) {
           <div
             style={{
               backgroundColor: 'rgb(16, 79, 33)',
-              marginTop: -30,
-              marginLeft: 40,
+              marginTop: -50,
+              marginLeft: 100,
               paddingBottom: 30,
-              paddingTop: 90,
+              paddingTop: 100,
               paddingLeft: 30,
               paddingRight: 30,
               position: 'absolute',
@@ -35,7 +36,7 @@ export default function Header(props) {
         <a
           style={{
             color: 'white',
-            marginTop: 15,
+
             marginLeft: '50%',
             fontSize: '80%',
 
@@ -53,7 +54,7 @@ export default function Header(props) {
         <a
           style={{
             color: 'white',
-            marginTop: 15,
+
             fontSize: '80%',
             width: '7%',
             textAlign: 'center',
@@ -68,7 +69,7 @@ export default function Header(props) {
         <a
           style={{
             color: 'white',
-            marginTop: 15,
+
             fontSize: '80%',
             width: '6%',
             textAlign: 'center',
@@ -79,26 +80,27 @@ export default function Header(props) {
           </div>
         </a>
       </Link>
-      <div
+      <a
         style={{
-          marginRight: 15,
+          color: 'white',
+          marginRight: '-70px',
+          marginLeft: '50px',
         }}
       >
-        <a
-          style={{
-            color: 'white',
-          }}
-        >
-          1
-        </a>
-
+        1
+      </a>
+      <div
+        style={{
+          marginRight: 100,
+        }}
+      >
         <Link href="/payment">
           <a>
             <img
               src="/shopping-cart.svg"
               alt="Shopping cart"
-              width="50"
-              height="50"
+              width="40"
+              marginRight="90"
             />
           </a>
         </Link>

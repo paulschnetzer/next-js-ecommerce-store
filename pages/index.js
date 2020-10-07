@@ -10,8 +10,19 @@ export default function LandingPage() {
 
       <div className="LandingPageBackground"></div>
       <div className="MarktingSlogan">
+        <p
+          style={{
+            fontSize: '120%',
+            textAlign: 'center',
+            color: 'rgba(12, 12, 12, 0.50)',
+          }}
+        >
+          | Low on coffee? |
+        </p>
+        <h1>FIX IT NOW!</h1>
         <p>
-          RELEASE THE BEAN <br /> INSIDE YOU
+          CoffeeScript will supply you with coffee which not only tasted amazing
+          but also is ethically sourced and organically grown!
         </p>
       </div>
 

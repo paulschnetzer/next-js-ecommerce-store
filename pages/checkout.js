@@ -1,8 +1,19 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import { coffeeTypes } from '../util/coffeTypes';
+import nextCookies from 'next-cookies';
 
-export default function User() {
+export default function User(props) {
+  const coffeTypesPlusAmount = props.orderCookie.map((orderCookieObject) => ({
+    ...orderCookieObject,
+    ...coffeeTypes.find((coffeType) => coffeType.id === orderCookieObject.id),
+  }));
+
+  const sumPrice = coffeTypesPlusAmount
+    .map((item) => item.price * parseInt(item.amount))
+    .reduce((prev, curr) => prev + curr, 0);
+
   return (
     <Layout>
       <Head>
@@ -74,23 +85,28 @@ export default function User() {
             </div>
           </div>
           <div className="checkoutContainerPrice">
-            <div>
-              <p className="checkoutContainerPriceProduct">Product1</p>
-              <p>3,21</p>
-            </div>
-            <div>
-              <p className="checkoutContainerPriceProduct">Product1</p>
-              <p>3,21</p>
-            </div>
-            <div>
-              <p className="checkoutContainerPriceProduct">Product1</p>
-              <p>3,21</p>
-            </div>
+            {coffeTypesPlusAmount.map((coffee) => {
+              return (
+                // eslint-disable-next-line react/jsx-no-useless-fragment
+                <>
+                  {coffee.amount == 0 ? (
+                    ''
+                  ) : (
+                    <div key={coffee.id} className="table">
+                      {coffee.amount + ' x ' + coffee.name}
+
+                      <p>{(coffee.price * coffee.amount).toFixed(2) + ' $'}</p>
+                    </div>
+                  )}
+                </>
+              );
+            })}
             <div className="h_line"></div>
-            <div>
-              <p className="checkoutContainerTotalProduct">Total Price</p>
-              <p>31,21</p>
+            <div className="table">
+              <h4>Total Price</h4>
+              <p>{sumPrice.toFixed(2)} $</p>
             </div>
+
             <div>
               <Link href="/thanks">
                 <a>
@@ -103,4 +119,13 @@ export default function User() {
       </div>
     </Layout>
   );
+}
+export function getServerSideProps(context) {
+  const allCookies = nextCookies(context);
+  const orderCookie = allCookies.orderCookie || [];
+  return {
+    props: {
+      orderCookie: orderCookie,
+    },
+  };
 }

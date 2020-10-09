@@ -1,5 +1,6 @@
 import Link from 'next/link';
-export default function Header(props) {
+import { textArray } from '../pages/payment';
+export default function Header() {
   return (
     <header
       style={{
@@ -26,6 +27,7 @@ export default function Header(props) {
               paddingRight: 30,
               position: 'absolute',
               borderRadius: '0px 0px 60px 60px ',
+              boxShadow: '-18px 63px 103px 13px rgba(255,255,255,0.23)',
             }}
           >
             <img src="/logo.svg" alt="Logo" width="230" />
@@ -36,10 +38,8 @@ export default function Header(props) {
         <a
           style={{
             color: 'white',
-
             marginLeft: '50%',
             fontSize: '80%',
-
             width: '4.5%',
             textAlign: 'center',
             paddingBottom: '-50px',
@@ -87,7 +87,7 @@ export default function Header(props) {
           marginLeft: '50px',
         }}
       >
-        1
+        {textArray}
       </a>
       <div
         style={{

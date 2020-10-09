@@ -46,8 +46,7 @@ button:hover {
 
 /* ############Landing Page##################*/
 .LandingPageBackground {
-  background: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.823)),
-    url('/background-pic.png');
+  background: url('/background-pic3.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
@@ -64,7 +63,7 @@ button:hover {
   padding: 40px 60px 40px 70px;
 
   width: 650px;
-  background-color: rgba(245, 245, 245, 0.68);
+  background-color: rgba(245, 245, 245, 0.734);
 
   border-radius: 300px 50px 200px 80px;
 }
@@ -72,9 +71,10 @@ button:hover {
   font-weight: 300;
   letter-spacing: 6px;
   word-spacing: 10px;
-  font-size: 250%;
+  font-size: 300%;
   margin: 10px 0 40px 0;
   border-bottom: 2px solid black;
+
   color: rgb(12, 12, 12);
 }
 .MarktingSlogan p {
@@ -86,9 +86,16 @@ button:hover {
   letter-spacing: 2px;
   word-spacing: 4px;
 }
+
+.gridFontPrice {
+  opacity: 0.8;
+  font-size: 75%;
+}
+.gridItemContainerInfo p {
+  letter-spacing: 3px;
+}
 .gridcontainer {
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 20% 5%;
@@ -109,7 +116,7 @@ button:hover {
 .grid1 {
   grid-area: 1 / 2 / 1 / 2;
   background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   transition: 0.4s;
@@ -117,7 +124,7 @@ button:hover {
 .grid2 {
   grid-area: 1 / 4 / 1 / 4;
   background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   transition: 0.4s;
@@ -125,7 +132,7 @@ button:hover {
 .grid3 {
   grid-area: 1 / 6 / 1 / 6;
   background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   transition: 0.4s;
@@ -133,7 +140,7 @@ button:hover {
 .grid4 {
   grid-area: 2 / 2 / 2 / 2;
   background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   transition: 0.4s;
@@ -141,7 +148,7 @@ button:hover {
 .grid5 {
   grid-area: 2 / 4 / 2 / 4;
   background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   transition: 0.4s;
@@ -149,18 +156,22 @@ button:hover {
 .grid6 {
   grid-area: 2 / 6 / 2 / 6;
   background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
   border-radius: 10px 10px 0px 0px;
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   transition: 0.4s;
 }
 .gridItemContainer {
-  height: 260px;
-  width: 250px;
-  background-color: transparent;
+  height: 350px;
+  width: 300px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px 10px 0 0;
 }
 .gridItemContainer img {
   border-radius: 10px 10px 0px 0px;
+  margin-bottom: -20px;
+
+  width: 100%;
 }
 .gridItemContainerInfo {
   text-align: center;
@@ -168,7 +179,7 @@ button:hover {
 
 /* ############Product Page##################*/
 .productContainer {
-  height: 100vh;
+  height: 110vh;
   background-image: url('/coffee-background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -182,7 +193,7 @@ button:hover {
 .productContainer container {
   height: 80vh;
   width: 80vw;
-  margin-top: 100px;
+  margin: 100px 0 50px 0;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   display: flex;
@@ -195,28 +206,55 @@ button:hover {
   padding: 0 0 10px 0;
   letter-spacing: 2px;
   font-size: 200%;
-  border-bottom: 2px black solid;
+  color: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px rgba(0, 0, 0, 0.9) solid;
 }
 
 .productContainer img {
-  height: 50vh;
+  height: 60vh;
   width: auto;
   border-radius: 80px 2px 30px 2px;
+  margin-left: 40px;
 }
 .productContainer p {
   margin-bottom: 30px;
+  color: rgba(0, 0, 0, 0.734);
 }
 
 .productContainerText {
   width: 30vw;
   margin-bottom: 20px;
+  margin-right: 50px;
 }
 .productContainer button {
   margin-left: 30px;
+  margin-top: 2px;
+  width: 250px;
 }
 .productContainer span {
   font-weight: 600;
   letter-spacing: 1.5px;
+}
+.productContainer input {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  width: 50px;
+  margin-left: 5px;
+  bottom: 1px;
+}
+.AmountButton {
+  display: flex;
+  color: rgba(0, 0, 0, 0.9);
+}
+.AmountButton span {
+  margin-top: 10px;
+  font-size: 17px;
+}
+.AmountButton p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
 }
 
 /*########PaymentForm###########*/
@@ -230,9 +268,10 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgba(0, 0, 0, 0.8);
 }
 .paymentContainer container {
-  padding: 50px;
+  padding: 20px 50px 50px 50px;
   width: 50vw;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
@@ -240,6 +279,7 @@ button:hover {
   justify-content: space-around;
   align-items: center;
   border-radius: 20px 180px 180px 180px;
+  margin: 150px 0 50px 0;
 }
 
 .paymentContainerLeft {
@@ -253,12 +293,10 @@ button:hover {
 .paymentContainerLeftList {
   display: flex;
   flex-direction: column;
-
   width: 390px;
 }
 .paymentContainerLeft p {
   display: inline-block;
-
   text-align: right;
 }
 
@@ -268,13 +306,15 @@ button:hover {
   background: rgb(0, 0, 0);
 }
 .paymentContainerButton {
-  width: 35%;
+  width: 30%;
 }
 .paymentContainer button {
   margin: 25px 100px 25px 0;
   height: 70px;
-  width: 200px;
+  width: 170px;
   font-size: 110%;
+  font-size: smaller;
+  padding: 0 5px;
 }
 .table {
   width: 300px;
@@ -294,6 +334,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgba(0, 0, 0, 0.8);
 }
 .checkoutContainer container {
   height: 100vh;
@@ -355,8 +396,14 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+.thanksContainer p {
+  opacity: 0.8;
+}
+.thanksContainer h1 {
+  color: rgba(0, 0, 0, 0.8);
+}
 .thanksContainer container {
-  padding-left: 50px;
+  margin-top: 60px;
   padding: 50px;
   line-height: 170%;
   width: 60vw;

@@ -20,6 +20,7 @@ export default function LandingPage() {
           | Low on coffee? |
         </p>
         <h1>FIX IT NOW!</h1>
+
         <p>
           CoffeeScript will supply you with coffee which not only tasted amazing
           but also is ethically sourced and organically grown!
@@ -32,12 +33,10 @@ export default function LandingPage() {
             <Link href="/1">
               <a>
                 <div className="gridItemContainer">
-                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <img src="coffee1.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
-                    <p>
-                      Light Roast Coffee<br></br>
-                      3,50$/100g
-                    </p>
+                    <p>Columbia Tolima</p>
+                    <p className="gridFontPrice">24,50$/500g</p>
                   </div>
                 </div>
               </a>
@@ -48,12 +47,10 @@ export default function LandingPage() {
             <Link href="/2">
               <a>
                 <div className="gridItemContainer">
-                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <img src="coffee2.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
-                    <p>
-                      Dark Roast Coffee<br></br>
-                      2,90$/100g
-                    </p>
+                    <p>Columbia Ruiz</p>
+                    <p className="gridFontPrice">22,90$/500g</p>
                   </div>
                 </div>
               </a>
@@ -63,12 +60,10 @@ export default function LandingPage() {
             <Link href="/3">
               <a>
                 <div className="gridItemContainer">
-                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <img src="coffee3.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
-                    <p>
-                      Medium Roast Coffee<br></br>
-                      3,80$/100g
-                    </p>
+                    <p>Columbia Castillo </p>
+                    <p className="gridFontPrice"> 27,80$/500g</p>
                   </div>
                 </div>
               </a>
@@ -78,12 +73,11 @@ export default function LandingPage() {
             <Link href="/4">
               <a>
                 <div className="gridItemContainer">
-                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <img src="coffee4.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
-                    <p>
-                      Columbian Coffee<br></br>
-                      3,20$/100g
-                    </p>
+                    <p>Ethopian Shakiso</p>
+
+                    <p className="gridFontPrice">35,20$/500g</p>
                   </div>
                 </div>
               </a>
@@ -93,12 +87,10 @@ export default function LandingPage() {
             <Link href="/5">
               <a>
                 <div className="gridItemContainer">
-                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <img src="coffee5.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
-                    <p>
-                      Brazilian Coffee<br></br>
-                      3,10$/100g
-                    </p>
+                    <p>House Blend</p>
+                    <p className="gridFontPrice">23,10$/500g</p>
                   </div>
                 </div>
               </a>
@@ -108,12 +100,10 @@ export default function LandingPage() {
             <Link href="/6">
               <a>
                 <div className="gridItemContainer">
-                  <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+                  <img src="coffee6.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
-                    <p>
-                      Decaf Coffee<br></br>
-                      4,50$/100g
-                    </p>
+                    <p>Guatemala Nango</p>
+                    <p className="gridFontPrice">31,50$/500g</p>
                   </div>
                 </div>
               </a>

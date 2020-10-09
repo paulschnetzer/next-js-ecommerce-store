@@ -21,9 +21,28 @@ export default function User(props) {
       id: coffee.id,
       amount: productAmmountRef.current.value,
     };
-    cookie.set('orderCookie', [...props.orderCookie, productAmmount]);
+    if (props.orderCookie.length === 0) {
+      cookie.set('orderCookie', [...props.orderCookie, productAmmount]);
+    } else {
+      const idExists = props.orderCookie.some(
+        (item) => item.id === productAmmount.id,
+      );
+      if (idExists) {
+        const preFilter = props.orderCookie.filter((user) =>
+          user.id === productAmmount.id
+            ? (user.amount = productAmmount.amount)
+            : console.log('nice'),
+        );
+        const finalArray = props.orderCookie.map(
+          (obj) => preFilter.find((o) => o.id === obj.id) || obj,
+        );
+        cookie.set('orderCookie', finalArray);
+      } else {
+        cookie.set('orderCookie', [...props.orderCookie, productAmmount]);
+      }
+    }
+    console.log(props.orderCookie);
   }
-
   return (
     <Layout>
       <Head>
@@ -33,7 +52,7 @@ export default function User(props) {
       <div className="productContainer">
         <container>
           <div>
-            <img src="coffe-bag-undedited.jpg" alt="Logo" width="250" />
+            <img src={coffee.image} alt="Logo" />
           </div>
           <div className="productContainerText">
             <h1>{coffee.name}</h1>
@@ -44,8 +63,19 @@ export default function User(props) {
               Perfect for starting an amazing day or haveing a great afternoon
               with you friends.
             </p>
-            <div>
-              <span>{coffee.price}$/100g</span>
+            <div className="AmountButton">
+              <span>
+                <p>{coffee.price}0$/100g</p>
+                <div>
+                  Quantity:
+                  <input
+                    ref={productAmmountRef}
+                    type="number"
+                    defaultValue="1"
+                    min="1"
+                  />
+                </div>
+              </span>
               <Link href="/payment">
                 <a>
                   <button onClick={toggleCookieState}>
@@ -53,11 +83,6 @@ export default function User(props) {
                   </button>
                 </a>
               </Link>
-              <input
-                ref={productAmmountRef}
-                type="number"
-                placeholder="Amount"
-              />
             </div>
           </div>
         </container>
@@ -73,12 +98,3 @@ export function getServerSideProps(context) {
     props: { id: context.query.id, orderCookie: orderCookie },
   };
 }
-export function dhdhd() {}
-// function addPricesTogether() {
-//   let priceArray = addCoffee.map((itemPrice) => {
-//     return itemPrice.price;
-//   });
-
-//   let sumOfPrices = priceArray.reduce((a, b) => a + b, 0);
-//   setTotalPrice(sumOfPrices);
-// }

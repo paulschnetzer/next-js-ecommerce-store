@@ -1,19 +1,23 @@
+/* eslint-disable eqeqeq */
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import Router from 'next/router';
+
 import { coffeeTypes } from '../util/coffeTypes';
 import nextCookies from 'next-cookies';
 
-function BackButton() {
-  return <button onClick={() => Router.back()}>Go Back</button>;
-}
+export let textArray = 0;
 
 export default function User(props) {
   const coffeTypesPlusAmount = props.orderCookie.map((orderCookieObject) => ({
     ...orderCookieObject,
     ...coffeeTypes.find((coffeType) => coffeType.id === orderCookieObject.id),
   }));
+
+  const sumPrice = coffeTypesPlusAmount
+    .map((item) => item.price * parseInt(item.amount))
+    .reduce((prev, curr) => prev + curr, 0);
+  textArray = props.orderCookie.length;
 
   return (
     <Layout>
@@ -35,7 +39,9 @@ export default function User(props) {
                       <div key={coffee.id} className="table">
                         {coffee.amount + ' x ' + coffee.name}
 
-                        <p>{Math.round(coffee.price * coffee.amount) + '$'}</p>
+                        <p>
+                          {(coffee.price * coffee.amount).toFixed(2) + ' $'}
+                        </p>
                       </div>
                     )}
                   </>
@@ -44,17 +50,21 @@ export default function User(props) {
               <div className="h_line"></div>
               <div className="table">
                 <h4>Total Price</h4>
-                <p>50,45$</p>
+                <p>{sumPrice.toFixed(2)} $</p>
               </div>
             </div>
           </div>
           <div className="paymentContainerButton">
-            {BackButton()}
             <br />
 
             <Link href="/checkout">
               <a>
                 <button>Go to Checkout</button>
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <button>Continue Shopping</button>
               </a>
             </Link>
           </div>
@@ -71,27 +81,4 @@ export function getServerSideProps(context) {
       orderCookie: orderCookie,
     },
   };
-}
-
-// eslint-disable-next-line no-lone-blocks
-{
-  /* <div>
-            <div className="paymentContainerLeft">
-              <div className="paymentContainerLeftList">
-                <p>Product 1</p>
-              </div>
-              <div className="paymentContainerLeftList">
-                <p>price</p>
-              </div>
-            </div>
-            <div className="h_line"></div>
-            <div className="paymentContainerTotalPrice">
-              <div>
-                <h2>Total Price</h2>
-              </div>
-              <div>
-                <p>50,45$</p>
-              </div>
-            </div>
-          </div> */
 }

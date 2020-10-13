@@ -2,22 +2,38 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-
+import React, { useEffect, useState } from 'react';
 import { coffeeTypes } from '../util/coffeTypes';
 import nextCookies from 'next-cookies';
+import cookies from 'next-cookies';
+import cookie from 'js-cookie';
 
 export let textArray = 0;
 
 export default function User(props) {
+  // const [loading, setLoading] = useState(false);
+  // const [coffeeArray, setcoffeeArray] = useState([]);
+
   const coffeTypesPlusAmount = props.orderCookie.map((orderCookieObject) => ({
     ...orderCookieObject,
     ...coffeeTypes.find((coffeType) => coffeType.id === orderCookieObject.id),
   }));
 
+  // useEffect(() => {
+  //   setcoffeeArray(coffeTypesPlusAmount);
+  // }, [props.orderCookie]);
+
   const sumPrice = coffeTypesPlusAmount
     .map((item) => item.price * parseInt(item.amount))
     .reduce((prev, curr) => prev + curr, 0);
   textArray = props.orderCookie.length;
+
+  // function handleDelete(dope) {
+  //   const deletedArray = props.orderCookie.filter(
+  //     (item) => item.id !== dope.id,
+  //   );
+  //   cookie.set('orderCookie', deletedArray);
+  // }
 
   return (
     <Layout>
@@ -29,24 +45,34 @@ export default function User(props) {
         <container>
           <div className="paymentContainerLeft">
             <div className="paymentContainerLeftList">
-              {coffeTypesPlusAmount.map((coffee) => {
-                return (
-                  // eslint-disable-next-line react/jsx-no-useless-fragment
-                  <>
-                    {coffee.amount == 0 ? (
-                      ''
-                    ) : (
-                      <div key={coffee.id} className="table">
-                        {coffee.amount + ' x ' + coffee.name}
+              {
+                /*coffeeArray*/ coffeTypesPlusAmount.map((coffee) => {
+                  return (
+                    // eslint-disable-next-line react/jsx-no-useless-fragment
+                    <>
+                      {coffee.amount == 0 ? (
+                        ''
+                      ) : (
+                        <div key={coffee.id} className="table">
+                          {coffee.amount + ' x ' + coffee.name}
 
-                        <p>
-                          {(coffee.price * coffee.amount).toFixed(2) + ' $'}
-                        </p>
-                      </div>
-                    )}
-                  </>
-                );
-              })}
+                          <p>
+                            {(coffee.price * coffee.amount).toFixed(2) + ' $'}
+                          </p>
+                          {/* <button
+                          style={{ with: 10, fontSize: 10 }}
+                          onClick={() => {
+                            handleDelete(coffee);
+                          }}
+                        >
+                          Delete
+                        </button> */}
+                        </div>
+                      )}
+                    </>
+                  );
+                })
+              }
               <div className="h_line"></div>
               <div className="table">
                 <h4>Total Price</h4>

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { coffeeTypes } from '../util/coffeTypes';
+
 import nextCookies from 'next-cookies';
 import cookies from 'next-cookies';
 import cookie from 'js-cookie';
@@ -16,7 +16,9 @@ export default function User(props) {
 
   const coffeTypesPlusAmount = props.orderCookie.map((orderCookieObject) => ({
     ...orderCookieObject,
-    ...coffeeTypes.find((coffeType) => coffeType.id === orderCookieObject.id),
+    ...props.coffeeTypes.find(
+      (coffeType) => coffeType.id === orderCookieObject.id,
+    ),
   }));
 
   // useEffect(() => {
@@ -99,12 +101,16 @@ export default function User(props) {
     </Layout>
   );
 }
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
+  const { getCoffees } = await import('../util/coffeTypes');
+  const coffeeTypes = await getCoffees();
+
   const allCookies = nextCookies(context);
   const orderCookie = allCookies.orderCookie || [];
   return {
     props: {
       orderCookie: orderCookie,
+      coffeeTypes,
     },
   };
 }

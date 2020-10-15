@@ -96,12 +96,7 @@ export default function Header() {
       >
         <Link href="/payment">
           <a>
-            <img
-              src="/shopping-cart.svg"
-              alt="Shopping cart"
-              width="40"
-              marginRight="90"
-            />
+            <img src="/shopping-cart.svg" alt="Shopping cart" width="40" />
           </a>
         </Link>
       </div>

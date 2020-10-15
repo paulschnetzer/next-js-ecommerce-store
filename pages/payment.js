@@ -1,41 +1,46 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable eqeqeq */
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import nextCookies from 'next-cookies';
-import cookies from 'next-cookies';
 import cookie from 'js-cookie';
 
 export let textArray = 0;
 
 export default function User(props) {
-  // const [loading, setLoading] = useState(false);
-  // const [coffeeArray, setcoffeeArray] = useState([]);
-
-  const coffeTypesPlusAmount = props.orderCookie.map((orderCookieObject) => ({
+  const [orderCookie, setOrderCookie] = useState(props.orderCookie);
+  const coffeTypesPlusAmount = orderCookie.map((orderCookieObject) => ({
     ...orderCookieObject,
     ...props.coffeeTypes.find(
       (coffeType) => coffeType.id === orderCookieObject.id,
     ),
   }));
 
-  // useEffect(() => {
-  //   setcoffeeArray(coffeTypesPlusAmount);
-  // }, [props.orderCookie]);
+  const [coffeTypesPlusAmountState, setCoffeTypesPlusAmountState] = useState(
+    coffeTypesPlusAmount,
+  );
 
-  const sumPrice = coffeTypesPlusAmount
+  function handleDelete(id) {
+    const reducedCookie = orderCookie.filter(
+      (deletedcoffee) => deletedcoffee.id !== id,
+    );
+    cookie.set('orderCookie', reducedCookie);
+    setOrderCookie(reducedCookie);
+
+    const reducedCoffee = coffeTypesPlusAmount.filter(
+      (deletedcookie) => deletedcookie.id !== id,
+    );
+    setCoffeTypesPlusAmountState(reducedCoffee);
+  }
+
+  const sumPrice = coffeTypesPlusAmountState
     .map((item) => item.price * parseInt(item.amount))
     .reduce((prev, curr) => prev + curr, 0);
-  textArray = props.orderCookie.length;
-
-  // function handleDelete(dope) {
-  //   const deletedArray = props.orderCookie.filter(
-  //     (item) => item.id !== dope.id,
-  //   );
-  //   cookie.set('orderCookie', deletedArray);
-  // }
+  textArray = orderCookie.length;
 
   return (
     <Layout>
@@ -44,41 +49,32 @@ export default function User(props) {
       </Head>
 
       <div className="paymentContainer">
-        <container>
+        <div className="container">
           <div className="paymentContainerLeft">
             <div className="paymentContainerLeftList">
-              {
-                /*coffeeArray*/ coffeTypesPlusAmount.map((coffee) => {
-                  return (
-                    // eslint-disable-next-line react/jsx-no-useless-fragment
-                    <>
-                      {coffee.amount == 0 ? (
-                        ''
-                      ) : (
-                        <div key={coffee.id} className="table">
-                          {coffee.amount + ' x ' + coffee.name}
+              {coffeTypesPlusAmountState.map((coffee) => {
+                return coffee.amount == 0 ? null : (
+                  <div key={coffee.id} className="table">
+                    <img
+                      src="/delete.svg"
+                      alt="delete Button"
+                      height="25"
+                      onClick={() => handleDelete(coffee.id)}
+                    />
+                    <p>{coffee.amount + ' x ' + coffee.name}</p>
 
-                          <p>
-                            {(coffee.price * coffee.amount).toFixed(2) + ' $'}
-                          </p>
-                          {/* <button
-                          style={{ with: 10, fontSize: 10 }}
-                          onClick={() => {
-                            handleDelete(coffee);
-                          }}
-                        >
-                          Delete
-                        </button> */}
-                        </div>
-                      )}
-                    </>
-                  );
-                })
-              }
+                    {(coffee.price * coffee.amount).toFixed(2) + ' $'}
+                  </div>
+                );
+              })}
               <div className="h_line"></div>
-              <div className="table">
-                <h4>Total Price</h4>
-                <p>{sumPrice.toFixed(2)} $</p>
+              <div className="tablebottom">
+                <div>
+                  <h4>Total Price</h4>
+                </div>
+                <div>
+                  <p>{sumPrice.toFixed(2)} $</p>
+                </div>
               </div>
             </div>
           </div>
@@ -96,7 +92,7 @@ export default function User(props) {
               </a>
             </Link>
           </div>
-        </container>
+        </div>
       </div>
     </Layout>
   );

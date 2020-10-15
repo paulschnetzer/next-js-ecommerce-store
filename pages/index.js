@@ -8,27 +8,28 @@ export default function LandingPage() {
         <title>Home</title>
       </Head>
 
-      <div className="LandingPageBackground"></div>
-      <div className="MarktingSlogan">
-        <p
-          style={{
-            fontSize: '120%',
-            textAlign: 'center',
-            color: 'rgba(12, 12, 12, 0.50)',
-          }}
-        >
-          | Low on coffee? |
-        </p>
-        <h1>FIX IT NOW!</h1>
+      <div className="LandingPageBackground">
+        <div className="MarktingSlogan">
+          <p
+            style={{
+              fontSize: '110%',
+              textAlign: 'center',
+              color: 'rgba(12, 12, 12, 0.50)',
+            }}
+          >
+            | Low on coffee? |
+          </p>
+          <h1>FIX IT NOW!</h1>
 
-        <p>
-          CoffeeScript will supply you with coffee which not only tasted amazing
-          but also is ethically sourced and organically grown!
-        </p>
+          <p>
+            CoffeeScript will supply you with coffee which not only tasted
+            amazing but also is ethically sourced and organically grown!
+          </p>
+        </div>
       </div>
 
       <section>
-        <container className="gridcontainer">
+        <div className="gridcontainer">
           <div className="grid1">
             <Link href="/1">
               <a>
@@ -36,7 +37,7 @@ export default function LandingPage() {
                   <img src="coffee1.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
                     <p>Columbia Tolima</p>
-                    <p className="gridFontPrice">24,50$/500g</p>
+                    <p className="gridFontPrice">3,50$/100g</p>
                   </div>
                 </div>
               </a>
@@ -50,7 +51,7 @@ export default function LandingPage() {
                   <img src="coffee2.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
                     <p>Columbia Ruiz</p>
-                    <p className="gridFontPrice">22,90$/500g</p>
+                    <p className="gridFontPrice">2,90$/100g</p>
                   </div>
                 </div>
               </a>
@@ -63,7 +64,7 @@ export default function LandingPage() {
                   <img src="coffee3.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
                     <p>Columbia Castillo </p>
-                    <p className="gridFontPrice"> 27,80$/500g</p>
+                    <p className="gridFontPrice"> 3,80$/100g</p>
                   </div>
                 </div>
               </a>
@@ -77,7 +78,7 @@ export default function LandingPage() {
                   <div className="gridItemContainerInfo">
                     <p>Ethopian Shakiso</p>
 
-                    <p className="gridFontPrice">35,20$/500g</p>
+                    <p className="gridFontPrice">3,20$/100g</p>
                   </div>
                 </div>
               </a>
@@ -90,7 +91,7 @@ export default function LandingPage() {
                   <img src="coffee5.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
                     <p>House Blend</p>
-                    <p className="gridFontPrice">23,10$/500g</p>
+                    <p className="gridFontPrice">3,10$/100g</p>
                   </div>
                 </div>
               </a>
@@ -103,13 +104,13 @@ export default function LandingPage() {
                   <img src="coffee6.png" alt="Logo" width="250" />
                   <div className="gridItemContainerInfo">
                     <p>Guatemala Nango</p>
-                    <p className="gridFontPrice">31,50$/500g</p>
+                    <p className="gridFontPrice">4,50$/100g</p>
                   </div>
                 </div>
               </a>
             </Link>
           </div>
-        </container>
+        </div>
       </section>
     </Layout>
   );

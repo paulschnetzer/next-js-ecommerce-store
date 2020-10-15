@@ -10,7 +10,7 @@ export default function User() {
       </Head>
 
       <div className="thanksContainer">
-        <container>
+        <div className="container">
           <Link href="/">
             <a>
               <button>Go Back</button>
@@ -27,7 +27,7 @@ export default function User() {
               <br /> regarding shipping and payment.
             </p>
           </div>
-        </container>
+        </div>
       </div>
     </Layout>
   );

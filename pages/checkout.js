@@ -23,41 +23,41 @@ export default function User(props) {
       </Head>
 
       <div className="checkoutContainer">
-        <container>
+        <div className="container">
           <div>
-            <div class="Shipping">
+            <div className="Shipping">
               <h1>Shipping</h1>
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="First Name"
                 name="name"
                 id="name"
               />
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="Second Name"
                 name="name"
                 id="name"
               />
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="Adress"
                 name="name"
                 id="name"
               />
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="E-Mail"
                 name="name"
                 id="name"
               />
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="Phone-Number"
                 name="name"
                 id="name"
@@ -65,21 +65,21 @@ export default function User(props) {
               <h1>Payment</h1>
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="Full Name"
                 name="name"
                 id="name"
               />
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="Card Number"
                 name="name"
                 id="name"
               />
               <input
                 type="input"
-                class="form__field"
+                className="form__field"
                 placeholder="Expiration Date"
                 name="name"
                 id="name"
@@ -88,19 +88,12 @@ export default function User(props) {
           </div>
           <div className="checkoutContainerPrice">
             {coffeTypesPlusAmount.map((coffee) => {
-              return (
-                // eslint-disable-next-line react/jsx-no-useless-fragment
-                <>
-                  {coffee.amount == 0 ? (
-                    ''
-                  ) : (
-                    <div key={coffee.id} className="table">
-                      {coffee.amount + ' x ' + coffee.name}
+              return coffee.amount === 0 ? null : (
+                <div key={coffee.id} className="table">
+                  {coffee.amount + ' x ' + coffee.name}
 
-                      <p>{(coffee.price * coffee.amount).toFixed(2) + ' $'}</p>
-                    </div>
-                  )}
-                </>
+                  <p>{(coffee.price * coffee.amount).toFixed(2) + ' $'}</p>
+                </div>
               );
             })}
             <div className="h_line"></div>
@@ -117,7 +110,7 @@ export default function User(props) {
               </Link>
             </div>
           </div>
-        </container>
+        </div>
       </div>
     </Layout>
   );

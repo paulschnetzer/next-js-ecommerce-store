@@ -52,7 +52,7 @@ export default function User(props) {
       </Head>
 
       <div className="productContainer">
-        <container>
+        <div className="container">
           <div>
             <img src={coffee.image} alt="Logo" />
           </div>
@@ -87,7 +87,7 @@ export default function User(props) {
               </Link>
             </div>
           </div>
-        </container>
+        </div>
       </div>
     </Layout>
   );

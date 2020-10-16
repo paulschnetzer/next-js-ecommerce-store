@@ -45,9 +45,7 @@ export default function Header() {
             paddingBottom: '-50px',
           }}
         >
-          <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
-            HOME
-          </div>
+          <div className="NavLinks">HOME</div>
         </a>
       </Link>
       <Link href="/checkout">
@@ -60,9 +58,7 @@ export default function Header() {
             textAlign: 'center',
           }}
         >
-          <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
-            CHECKOUT
-          </div>
+          <div className="NavLinks">CHECKOUT</div>
         </a>
       </Link>
       <Link href="/">
@@ -75,9 +71,7 @@ export default function Header() {
             textAlign: 'center',
           }}
         >
-          <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
-            ABOUT US
-          </div>
+          <div className="NavLinks">ABOUT US</div>
         </a>
       </Link>
       <a

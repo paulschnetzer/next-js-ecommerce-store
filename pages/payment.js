@@ -58,10 +58,11 @@ export default function User(props) {
                     <img
                       src="/delete.svg"
                       alt="delete Button"
-                      height="25"
                       onClick={() => handleDelete(coffee.id)}
+                      className="animate__animated
+                      animate__bounce"
                     />
-                    <p>{coffee.amount + ' x ' + coffee.name}</p>
+                    <p>{coffee.amount + '00g ' + coffee.name}</p>
 
                     {(coffee.price * coffee.amount).toFixed(2) + ' $'}
                   </div>
@@ -83,12 +84,12 @@ export default function User(props) {
 
             <Link href="/checkout">
               <a>
-                <button>Go to Checkout</button>
+                <button>Checkout</button>
               </a>
             </Link>
             <Link href="/">
               <a>
-                <button>Continue Shopping</button>
+                <button className="leftButton">Go Back</button>
               </a>
             </Link>
           </div>

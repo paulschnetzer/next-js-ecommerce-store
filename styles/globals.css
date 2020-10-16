@@ -37,13 +37,36 @@ button {
   font-size: 16px;
   cursor: pointer;
   border-radius: 30px 30px 30px 5px;
-  transition: 0.3s;
+  transition: 0.2s;
   transition-timing-function: ease-out;
 }
+
 button:hover {
-  background-color: rgb(123, 35, 35);
+  transform: scale(1.05);
+  transform: translate(20px);
+
+  background-color: rgb(119, 53, 53);
 }
 
+/* ############header##################*/
+.NavLinks {
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+  padding-bottom: 5px;
+  transition: 0.4s;
+}
+header img {
+  transition: 0.4s;
+}
+header img[src*='/shopping-cart.svg']:hover {
+  transform: rotate(-20deg);
+}
+header img[src*='/logo.svg']:hover {
+  transform: scale(1.05);
+}
+.NavLinks:hover {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  padding-bottom: 5px;
+}
 /* ############Landing Page##################*/
 .LandingPageBackground {
   background: url('/background-pic3.png');
@@ -110,60 +133,44 @@ button:hover {
 .grid4:hover,
 .grid5:hover,
 .grid6:hover {
-  opacity: 0.8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 70px 8px rgba(0, 0, 0, 0.04);
+  transform: scale(1.08);
 }
 .grid1 {
   grid-area: 1 / 2 / 1 / 2;
-  background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
-  border-radius: 10px 10px 0px 0px;
-  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
-  transition: 0.4s;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 .grid2 {
   grid-area: 1 / 4 / 1 / 4;
-  background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
-  border-radius: 10px 10px 0px 0px;
-  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
-  transition: 0.4s;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 .grid3 {
   grid-area: 1 / 6 / 1 / 6;
-  background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
-  border-radius: 10px 10px 0px 0px;
-  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
-  transition: 0.4s;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 .grid4 {
   grid-area: 2 / 2 / 2 / 2;
-  background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
-  border-radius: 10px 10px 0px 0px;
-  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
-  transition: 0.4s;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 .grid5 {
   grid-area: 2 / 4 / 2 / 4;
-  background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
-  border-radius: 10px 10px 0px 0px;
-  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
-  transition: 0.4s;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 .grid6 {
   grid-area: 2 / 6 / 2 / 6;
-  background-color: rgb(247, 247, 247);
-  border-bottom: 3px solid rgba(28, 28, 29, 0.687);
-  border-radius: 10px 10px 0px 0px;
-  box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
-  transition: 0.4s;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 .gridItemContainer {
   height: 350px;
   width: 300px;
-  background-color: rgb(240, 240, 240);
+
   border-radius: 10px 10px 0 0;
 }
 .gridItemContainer img {
@@ -226,7 +233,7 @@ button:hover {
   margin-right: 50px;
 }
 .productContainer button {
-  margin-left: 30px;
+  margin-left: 70px;
   margin-top: 2px;
   width: 250px;
 }
@@ -269,6 +276,7 @@ button:hover {
   align-items: center;
   color: rgba(0, 0, 0, 0.8);
 }
+
 .paymentContainer .container {
   padding: 20px 50px 50px 50px;
   width: 50vw;
@@ -297,23 +305,27 @@ button:hover {
 .table p {
   width: 300px;
 }
+.AmountButton {
+  width: 500px;
+}
 
 .h_line {
   width: 100%;
   height: 1.6px;
   background: rgb(0, 0, 0);
 }
-.paymentContainerButton {
-  width: 30%;
-}
+
 .paymentContainer button {
-  margin: 25px 100px 25px 0;
-  height: 70px;
-  width: 170px;
+  margin: 25px 0px 25px 20px;
+
+  width: 200px;
   font-size: 110%;
   font-size: smaller;
-  padding: 0 5px;
 }
+.leftButton:hover {
+  transform: translate(-20px);
+}
+
 .table {
   width: 400px;
   display: flex;
@@ -328,7 +340,17 @@ button:hover {
   display: block;
   cursor: pointer;
 }
-
+.table img {
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+  height: 35px;
+  border-radius: 50%;
+  padding: 4px 0 5px 0;
+  margin-top: -2px;
+}
+.table img:hover {
+  transform: rotate(20deg);
+}
 /*########Checkout###########*/
 
 .checkoutContainer {
@@ -360,7 +382,7 @@ button:hover {
 }
 
 .form__field {
-  width: 100%;
+  width: 200px;
   border: 0;
   border-bottom: 2px solid gray;
   outline: 0;
@@ -369,28 +391,38 @@ button:hover {
   margin: 10px 0px;
 }
 .checkoutContainerPrice {
-  width: 90%;
   margin-bottom: 140px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
 }
 .checkoutContainerPrice p {
   display: inline;
-
   line-height: 200%;
 }
-.checkoutContainerPriceProduct {
-  margin-right: 200px;
-}
+
 .checkoutContainer .h_line {
   margin-left: -19px;
+  width: 110%;
 }
-.checkoutContainerTotalProduct {
-  margin-right: 180px;
-}
+
 .checkoutContainer button {
   width: 300px;
   margin: 30px 0 0 20px;
 }
-
+.checkoutContainer .table {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutContainer .table h4 {
+  line-height: 200%;
+}
+.InputError {
+  font-size: 7px;
+  color: darkred;
+  font-weight: 800;
+}
 /*##########thank you##########*/
 .thanksContainer {
   height: 65vh;
@@ -414,7 +446,7 @@ button:hover {
   padding: 50px;
   line-height: 170%;
   width: 60vw;
-  background-color: rgba(221, 210, 210, 0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: -15px -9px 55px -10px rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: space-around;
@@ -425,4 +457,7 @@ button:hover {
 .thanksContainer button {
   border-radius: 50% 10% 10% 50%;
   margin: 0px 0px 90px -30px;
+}
+.thanksContainer button:hover {
+  transform: translate(-20px);
 }

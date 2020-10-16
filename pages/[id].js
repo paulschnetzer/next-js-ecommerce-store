@@ -19,7 +19,7 @@ export default function User(props) {
   function toggleCookieState() {
     const coffeeInput = {
       id: coffee.id,
-      amount: productAmountRef.current.value,
+      amount: parseInt(productAmountRef.current.value),
     };
     if (props.orderCookie.length === 0) {
       cookie.set('orderCookie', [coffeeInput]);
@@ -80,9 +80,7 @@ export default function User(props) {
               </span>
               <Link href="/payment">
                 <a>
-                  <button onClick={toggleCookieState}>
-                    ADD to Shopping Card
-                  </button>
+                  <button onClick={toggleCookieState}>Add to Card</button>
                 </a>
               </Link>
             </div>

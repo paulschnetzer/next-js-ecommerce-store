@@ -9,6 +9,7 @@
     "migrate": "dotenv ley"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "camelcase-keys": "^6.2.2",
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
@@ -18,7 +19,8 @@
     "next-cookies": "^2.0.3",
     "postgres": "^1.0.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-hook-form": "^6.9.2"
   },
   "devDependencies": {
     "@types/react": "16.8.24",

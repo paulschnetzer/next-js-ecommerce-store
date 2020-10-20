@@ -5,9 +5,9 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import React, { useState } from 'react';
-
+import { handleDelete } from '../util/deleteCookie';
+import { sumPrice } from '../util/sumFunction';
 import nextCookies from 'next-cookies';
-import cookie from 'js-cookie';
 
 export let textArray = 0;
 
@@ -20,26 +20,10 @@ export default function User(props) {
     ),
   }));
 
-  const [coffeTypesPlusAmountState, setCoffeTypesPlusAmountState] = useState(
-    coffeTypesPlusAmount,
-  );
-
-  function handleDelete(id) {
-    const reducedCookie = orderCookie.filter(
-      (deletedcoffee) => deletedcoffee.id !== id,
-    );
-    cookie.set('orderCookie', reducedCookie);
-    setOrderCookie(reducedCookie);
-
-    const reducedCoffee = coffeTypesPlusAmount.filter(
-      (deletedcookie) => deletedcookie.id !== id,
-    );
-    setCoffeTypesPlusAmountState(reducedCoffee);
-  }
-
-  const sumPrice = coffeTypesPlusAmountState
-    .map((item) => item.price * parseInt(item.amount))
-    .reduce((prev, curr) => prev + curr, 0);
+  const totalPrice = sumPrice(coffeTypesPlusAmount);
+  // const sumPrice = coffeTypesPlusAmountState
+  //   .map((item) => item.price * parseInt(item.amount))
+  //   .reduce((prev, curr) => prev + curr, 0);
   textArray = orderCookie.length;
 
   return (
@@ -52,13 +36,21 @@ export default function User(props) {
         <div className="container">
           <div className="paymentContainerLeft">
             <div className="paymentContainerLeftList">
-              {coffeTypesPlusAmountState.map((coffee) => {
+              {coffeTypesPlusAmount.map((coffee) => {
                 return coffee.amount == 0 ? null : (
                   <div key={coffee.id} className="table">
                     <img
                       src="/delete.svg"
                       alt="delete Button"
-                      onClick={() => handleDelete(coffee.id)}
+                      onClick={() => {
+                        const newCookie = handleDelete(
+                          coffee.id,
+                          orderCookie,
+                          setOrderCookie,
+                          coffeTypesPlusAmount,
+                        );
+                        setOrderCookie(newCookie);
+                      }}
                       className="animate__animated
                       animate__bounce"
                     />
@@ -74,7 +66,7 @@ export default function User(props) {
                   <h4>Total Price</h4>
                 </div>
                 <div>
-                  <p>{sumPrice.toFixed(2)} $</p>
+                  <p>{totalPrice.toFixed(2)} $</p>
                 </div>
               </div>
             </div>

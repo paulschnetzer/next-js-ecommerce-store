@@ -25,7 +25,8 @@ a {
 h4 {
   margin: 0;
 }
-button {
+button,
+input[type='submit'] {
   background-color: #440f0f;
   border: none;
 
@@ -422,6 +423,13 @@ header img[src*='/logo.svg']:hover {
   font-size: 7px;
   color: darkred;
   font-weight: 800;
+}
+.checkoutContainerPrice h1 {
+  margin-right: 100px;
+  width: 300px;
+  padding: 20px 30px 20px 50px;
+  border: rgb(34, 34, 34) solid 3px;
+  border-radius: 30px 90px 20px 100px;
 }
 /*##########thank you##########*/
 .thanksContainer {

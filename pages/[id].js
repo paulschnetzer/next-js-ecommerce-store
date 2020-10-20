@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import { toggleCookieState } from '../util/toggleCookieState';
 
 import Link from 'next/link';
-import cookie from 'js-cookie';
-import React, { useRef } from 'react';
+
+import React, { useState } from 'react';
 import nextCookies from 'next-cookies';
 
 export default function User(props) {
@@ -15,36 +16,12 @@ export default function User(props) {
     return false;
   });
 
-  const productAmountRef = useRef();
-  function toggleCookieState() {
-    const coffeeInput = {
-      id: coffee.id,
-      amount: parseInt(productAmountRef.current.value),
-    };
-    if (props.orderCookie.length === 0) {
-      cookie.set('orderCookie', [coffeeInput]);
-    } else {
-      const idExists = props.orderCookie.some(
-        (item) => item.id === coffeeInput.id,
-      );
-      if (idExists) {
-        const preFilter = props.orderCookie.filter((item) =>
-          item.id === coffeeInput.id
-            ? (item.amount = coffeeInput.amount) // change this into a non filter method
-            : console.log('nice'),
-        );
-        const finalArray = props.orderCookie.map(
-          (item) =>
-            preFilter.find((preFilterItem) => preFilterItem.id === item.id) ||
-            item,
-        );
-        cookie.set('orderCookie', finalArray);
-      } else {
-        cookie.set('orderCookie', [...props.orderCookie, coffeeInput]);
-      }
-    }
-    console.log(props.orderCookie);
-  }
+  const [amountofCoffee, setAmountofCoffee] = useState(1);
+  const coffeeInput = {
+    id: coffee.id,
+    amount: parseInt(amountofCoffee),
+  };
+
   return (
     <Layout>
       <Head>
@@ -71,16 +48,23 @@ export default function User(props) {
                 <div>
                   Quantity:
                   <input
-                    ref={productAmountRef}
+                    onChange={(e) => setAmountofCoffee(e.target.value)}
                     type="number"
-                    defaultValue="1"
                     min="1"
+                    value={amountofCoffee}
                   />
                 </div>
               </span>
               <Link href="/payment">
                 <a>
-                  <button onClick={toggleCookieState}>Add to Card</button>
+                  <button
+                    onClick={
+                      (console.log(props.orderCookie),
+                      () => toggleCookieState(props.orderCookie, coffeeInput))
+                    }
+                  >
+                    Add to Card
+                  </button>
                 </a>
               </Link>
             </div>

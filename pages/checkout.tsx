@@ -186,7 +186,7 @@ export default function Checkout(props: PropsforCheckout) {
                 {errors.expirationdate && (
                   <p className="InputError">❌Expiration date is required❌</p>
                 )}
-                <input type="submit" value="Upload " />
+                <input type="submit" value="Sign In" />
               </form>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function Checkout(props: PropsforCheckout) {
                   <BuyButton />
                 </>
               ) : (
-                <h1>Please Upload your personal Information to continue</h1>
+                <h1>Please Sign in to continue!</h1>
               )}
             </div>
           </div>

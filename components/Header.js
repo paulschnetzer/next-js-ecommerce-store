@@ -15,7 +15,7 @@ export default function Header() {
       }}
     >
       <Link href="/">
-        <a>
+        <a >
           <div
             style={{
               backgroundColor: 'rgb(16, 79, 33)',
@@ -44,8 +44,8 @@ export default function Header() {
             textAlign: 'center',
             paddingBottom: '-50px',
           }}
-        >
-          <div className="NavLinks">HOME</div>
+          >
+          <div className="NavLinks"  data-cy="nav-home">HOME</div>
         </a>
       </Link>
       <Link href="/checkout">
@@ -57,6 +57,7 @@ export default function Header() {
             width: '7%',
             textAlign: 'center',
           }}
+
         >
           <div className="NavLinks">CHECKOUT</div>
         </a>
@@ -70,7 +71,8 @@ export default function Header() {
             width: '6%',
             textAlign: 'center',
           }}
-        >
+
+          >
           <div className="NavLinks">ABOUT US</div>
         </a>
       </Link>

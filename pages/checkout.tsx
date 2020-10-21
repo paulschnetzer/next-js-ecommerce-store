@@ -100,6 +100,8 @@ export default function Checkout(props: PropsforCheckout) {
                   name="name"
                   id="name"
                   ref={register({ required: true })}
+                  data-cy="login-first-name"
+                  pattern="[a-zA-Z]+"
                 />
                 {errors.name && (
                   <p className="InputError">❌First Name is required❌</p>
@@ -111,9 +113,11 @@ export default function Checkout(props: PropsforCheckout) {
                   name="secondname"
                   id="secondname"
                   ref={register({ required: true })}
+                  data-cy="login-last-name"
+                  pattern="[a-zA-Z]+"
                 />
                 {errors.secondname && (
-                  <p className="InputError">Second Name is required❌</p>
+                  <p className="InputError">❌Second Name is required❌</p>
                 )}
                 <input
                   type="input"
@@ -122,6 +126,7 @@ export default function Checkout(props: PropsforCheckout) {
                   name="address"
                   id="address"
                   ref={register({ required: true })}
+                  data-cy="login-adress"
                 />
                 {errors.address && (
                   <p className="InputError">❌Address is required❌</p>
@@ -133,6 +138,7 @@ export default function Checkout(props: PropsforCheckout) {
                   name="email"
                   id="email"
                   ref={register({ required: true })}
+                  data-cy="login-email"
                 />
                 {errors.email && (
                   <p className="InputError">❌E-Mail is required❌</p>
@@ -145,6 +151,7 @@ export default function Checkout(props: PropsforCheckout) {
                   id="number"
                   pattern="(((\+43)? ?(\(0\))? ?)|(0))( ?[0-9]{3,4}){3}"
                   ref={register({ required: true })}
+                  data-cy="login-number"
                 />
                 {errors.number && (
                   <p className="InputError">❌Phone Number is required❌</p>
@@ -154,11 +161,13 @@ export default function Checkout(props: PropsforCheckout) {
                   type="text"
                   className="form__field"
                   placeholder="Full Name"
-                  name="name"
-                  id="name"
+                  name="fname"
+                  id="fname"
                   ref={register({ required: true })}
+                  data-cy="login-full-name"
+                  pattern="^[a-zA-Z\s]*$"
                 />
-                {errors.name && (
+                {errors.fname && (
                   <p className="InputError">❌Name is required❌</p>
                 )}
                 <input
@@ -170,6 +179,7 @@ export default function Checkout(props: PropsforCheckout) {
                   pattern="
                   AT\d{2}[ ]\d{4}[ ]\d{4}[ ]\d{4}[ ]\d{4}[ ]\d{2}|AT\d{18}"
                   ref={register({ required: true })}
+                  data-cy="login-card-number"
                 />
                 {errors.cardnumber && (
                   <p className="InputError">❌Card Number is required❌</p>
@@ -182,11 +192,12 @@ export default function Checkout(props: PropsforCheckout) {
                   id="expirationdate"
                   pattern="^(0[1-9]|1[0-2])\/?(([0-9]{4}|[0-9]{2})$)"
                   ref={register({ required: true })}
+                  data-cy="login-expirationdate"
                 />
                 {errors.expirationdate && (
                   <p className="InputError">❌Expiration date is required❌</p>
                 )}
-                <input type="submit" value="Sign In" />
+                <input type="submit" value="Sign In" data-cy="login-Submit"/>
               </form>
             </div>
           </div>
@@ -216,7 +227,7 @@ function BuyButton() {
     <div>
       <Link href="/thanks">
         <a>
-          <button>BUY NOW</button>
+          <button data-cy="buy-button">BUY NOW</button>
         </a>
       </Link>
     </div>

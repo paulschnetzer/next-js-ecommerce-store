@@ -38,7 +38,7 @@ export default function User(props) {
             <div className="paymentContainerLeftList">
               {coffeTypesPlusAmount.map((coffee) => {
                 return coffee.amount == 0 ? null : (
-                  <div key={coffee.id} className="table">
+                  <div key={coffee.id} className="table"  >
                     <img
                       src="/delete.svg"
                       alt="delete Button"
@@ -51,8 +51,7 @@ export default function User(props) {
                         );
                         setOrderCookie(newCookie);
                       }}
-                      className="animate__animated
-                      animate__bounce"
+                      data-cy={coffee.id+"delete"}
                     />
                     <p>{coffee.amount + '00g ' + coffee.name}</p>
 
@@ -76,7 +75,7 @@ export default function User(props) {
 
             <Link href="/checkout">
               <a>
-                <button>Checkout</button>
+                <button data-cy="go-to-checkout-button">Checkout</button>
               </a>
             </Link>
             <Link href="/">

@@ -68,6 +68,7 @@ header img[src*='/logo.svg']:hover {
   border-bottom: 2px solid rgb(255, 255, 255);
   padding-bottom: 5px;
 }
+
 /* ############Landing Page##################*/
 .LandingPageBackground {
   background: url('/background-pic3.png');
@@ -91,6 +92,7 @@ header img[src*='/logo.svg']:hover {
   border-radius: 50px 50px 0 0;
   text-align: center;
 }
+
 .MarktingSlogan h1 {
   font-weight: 300;
   letter-spacing: 6px;
@@ -423,6 +425,7 @@ header img[src*='/logo.svg']:hover {
   font-size: 7px;
   color: darkred;
   font-weight: 800;
+  padding-top: -120px;
 }
 .checkoutContainerPrice h1 {
   margin-right: 100px;

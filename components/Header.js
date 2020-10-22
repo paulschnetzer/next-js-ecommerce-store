@@ -7,25 +7,20 @@ export default function Header() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 20,
+        padding: "20px 40px",
         background: 'rgb(17, 18, 19)',
         color: 'whitesmoke',
-        paddingLeft: 40,
-        paddingRight: 40,
+
       }}
     >
       <Link href="/">
         <a >
           <div
             style={{
-              backgroundColor: 'rgb(16, 79, 33)',
-              marginTop: -50,
-              marginLeft: 100,
-              paddingBottom: 30,
-              paddingTop: 100,
-              paddingLeft: 30,
-              paddingRight: 30,
               position: 'absolute',
+              backgroundColor: 'rgb(16, 79, 33)',
+              margin:"-50px 0px 0px 100px",
+              padding:"100px 30px 30px 30px",
               borderRadius: '0px 0px 60px 60px ',
               boxShadow: '-18px 63px 103px 13px rgba(255,255,255,0.23)',
             }}
@@ -51,8 +46,7 @@ export default function Header() {
       <Link href="/checkout">
         <a
           style={{
-            color: 'white',
-
+            color:'whitesmoke',
             fontSize: '80%',
             width: '7%',
             textAlign: 'center',
@@ -65,8 +59,7 @@ export default function Header() {
       <Link href="/">
         <a
           style={{
-            color: 'white',
-
+            color: 'whitesmoke',
             fontSize: '80%',
             width: '6%',
             textAlign: 'center',
@@ -76,26 +69,32 @@ export default function Header() {
           <div className="NavLinks">ABOUT US</div>
         </a>
       </Link>
-      <a
+
+        <Link href="/payment" >
+          <a style={{
+          marginRight: 100,
+        }}>
+            <img src="/shopping-cart.svg" alt="Shopping cart" width="40" />
+            <div
         style={{
-          color: 'white',
-          marginRight: '-70px',
-          marginLeft: '50px',
+          display:"inline",
+          padding: "5px",
+          backgroundColor: 'whitesmoke',
+          opacity:"80%",
+          color:'rgb(17, 18, 19)',
+          borderRadius:"5px",
+          fontSize:"50%",
+          fontWeight:"bolder"
+
         }}
       >
         {textArray}
-      </a>
-      <div
-        style={{
-          marginRight: 100,
-        }}
-      >
-        <Link href="/payment">
-          <a>
-            <img src="/shopping-cart.svg" alt="Shopping cart" width="40" />
+      </div>
           </a>
         </Link>
-      </div>
+
+
+
     </header>
   );
 }

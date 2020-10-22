@@ -6,6 +6,7 @@ import nextCookies from 'next-cookies';
 import { GetServerSidePropsContext } from 'next';
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
+import { sumPrice } from '../util/sumFunction';
 
 type OrderCookieObject = {
   id: number;
@@ -43,38 +44,22 @@ type Data = {
 };
 
 export default function Checkout(props: PropsforCheckout) {
-  // const filteredCookies = props.orderCookie.filter((orderCookieObject) =>
-  //   props.coffeeTypes.some(
-  //     (coffeeType) => coffeeType.id === orderCookieObject.id,
-  //   ),
-  // );
-  // const coffeeTypesPlusAmount = filteredCookies.map(
-  //   (orderCookieObject: OrderCookieObject) => ({
-  //     ...orderCookieObject,
-  //     ...props.coffeeTypes.find(
-  //       (coffeeType: CoffeeType) => coffeeType.id === orderCookieObject.id,
-  //     ),
-  //   }),
-  // );
-  //This  does the same thing as the two methods up there but Typescript doesnt like it for some reason
+
   const coffeeTypesPlusAmount = props.orderCookie.reduce(
     (coffeeTypes: Item[], currentCookieObject) => {
       const matchingCoffeeType = props.coffeeTypes.find(
         (coffeeType: CoffeeType) => coffeeType.id === currentCookieObject.id,
       );
-
       if (matchingCoffeeType) {
         coffeeTypes.push({ ...currentCookieObject, ...matchingCoffeeType });
       }
-
       return coffeeTypes;
     },
     [],
   );
 
-  const sumPrice = coffeeTypesPlusAmount
-    .map((item: Item) => item.price * item.amount)
-    .reduce((prev: number, curr: number) => prev + curr, 0);
+  const totalPrice = sumPrice(coffeeTypesPlusAmount);
+
   const { register, handleSubmit, errors } = useForm();
   const [userValidation, setuserValidation] = useState(false);
   const onSubmit = (data: Data) => {
@@ -207,7 +192,7 @@ export default function Checkout(props: PropsforCheckout) {
                 <>
                   <DisplayOrder
                     coffeeTypesPlusAmount={coffeeTypesPlusAmount}
-                    sumPrice={sumPrice}
+                    sumPrice={totalPrice}
                   />
                   <BuyButton />
                 </>
@@ -266,7 +251,7 @@ function DisplayOrder(props: PropsforDisplayOrder) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { getCoffees } = await import('../util/coffeTypes');
+  const { getCoffees } = await import('../util/coffeeTypes');
   const coffeeTypes = await getCoffees();
 
   const allCookies = nextCookies(context);

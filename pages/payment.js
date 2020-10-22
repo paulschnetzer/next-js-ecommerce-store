@@ -13,17 +13,16 @@ export let textArray = 0;
 
 export default function User(props) {
   const [orderCookie, setOrderCookie] = useState(props.orderCookie);
-  const coffeTypesPlusAmount = orderCookie.map((orderCookieObject) => ({
+
+  const coffeeTypesPlusAmount = orderCookie.map((orderCookieObject) => ({
     ...orderCookieObject,
     ...props.coffeeTypes.find(
-      (coffeType) => coffeType.id === orderCookieObject.id,
+      (coffeeType) => coffeeType.id === orderCookieObject.id,
     ),
   }));
 
-  const totalPrice = sumPrice(coffeTypesPlusAmount);
-  // const sumPrice = coffeTypesPlusAmountState
-  //   .map((item) => item.price * parseInt(item.amount))
-  //   .reduce((prev, curr) => prev + curr, 0);
+  const totalPrice = sumPrice(coffeeTypesPlusAmount);
+
   textArray = orderCookie.length;
 
   return (
@@ -36,7 +35,7 @@ export default function User(props) {
         <div className="container">
           <div className="paymentContainerLeft">
             <div className="paymentContainerLeftList">
-              {coffeTypesPlusAmount.map((coffee) => {
+              {coffeeTypesPlusAmount.map((coffee) => {
                 return coffee.amount == 0 ? null : (
                   <div key={coffee.id} className="table"  >
                     <img
@@ -47,7 +46,7 @@ export default function User(props) {
                           coffee.id,
                           orderCookie,
                           setOrderCookie,
-                          coffeTypesPlusAmount,
+                          coffeeTypesPlusAmount,
                         );
                         setOrderCookie(newCookie);
                       }}
@@ -90,7 +89,7 @@ export default function User(props) {
   );
 }
 export async function getServerSideProps(context) {
-  const { getCoffees } = await import('../util/coffeTypes');
+  const { getCoffees } = await import('../util/coffeeTypes');
   const coffeeTypes = await getCoffees();
 
   const allCookies = nextCookies(context);

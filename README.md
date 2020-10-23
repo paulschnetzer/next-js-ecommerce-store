@@ -1,30 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Project (E-commerce store for Coffee)
 
-## Getting Started
+## Description
 
-First, run the development server:
+This is a Fullstack Project where you can buy coffee.
+There are a total of 5 Pages involved
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Landing Page
+2. dynamic Productpages for the 6 Coffees
+3. a checkout where you can see your order/total Price and can chancel orders
+4. a payment Page where you need to enter your personal Information (payment and shipping) to continue
+5. a thank you Page
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. HTML, CSS
+2. Next.js
+3. React.js (with Hooks)
+4. PostgreSQL
+5. TypeScript
+6. Tests: Cypress and Jest
 
-## Learn More
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+### The Landing Page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Screenshot 1](https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/coffee2.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### The Product Page Page
 
-## Deploy on Vercel
+![Screenshot 2](https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/coffee2.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### The Checkout Page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Screenshot 3](https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/coffee2.png)
+
+## Screenshots
+
+## Setup instructions
+
+1. create a repo (cd in the folder where you want to save the projects, git clone https://github.com/paulschnetzer/next-js-ecommerce-store)
+2. install the necceery dependencies (npm install or yarn install)
+3. Setup the database (having postgresSQL installed is a requirement)
+   open postgres in your commandline
+   change the .env.example file in the Root directory to .env and choose replace the "XXXXXX" with your desired Username, Password and Database
+   type npm run migrate up or yarn migrate up to create the table and the coffee / you can also replace the Array of Objects in the migrations\1602592297-addNewCoffeesIntoTable.js with items of your choice (please stick to the generall structure otherwise buggs could accour)
+4. to run the application: type yarn dev in your terminal and go to the localhost that opens up
+
+## Deployment Instructions
+
+deployed to Heroku

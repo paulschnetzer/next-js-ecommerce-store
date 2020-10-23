@@ -24,17 +24,15 @@ There are a total of 5 Pages involved
 
 ### The Landing Page
 
-<img src="https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-loading-page.PNG" alt="screenshot-loading page" width="200px" height="200px">
+<img src="https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-loading-page.PNG" alt="screenshot-loading page" width="400px">
 
-### The Product Page Page
+### The Product Page
 
-![Screenshot 2](https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-product-page.PNG | width=200)
+<img src="https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-product-page.PNG" alt="screenshot-loading page" width="400px">
 
 ### The Checkout Page
 
-![Screenshot 3](https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-checkout-page.PNG | width=200)
-
-## Screenshots
+<img src="https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-checkout-page.PNG" alt="screenshot-loading page" width="400px">
 
 ## Setup instructions
 

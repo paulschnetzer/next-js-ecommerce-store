@@ -24,7 +24,7 @@ There are a total of 5 Pages involved
 
 ### The Landing Page
 
-![Screenshot 1](https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-loading-page.PNG | width=200)
+<img src="https://github.com/paulschnetzer/next-js-ecommerce-store/blob/main/public/screenshot-loading-page.PNG" alt="screenshot-loading page" width="200px" height="200px">
 
 ### The Product Page Page
 

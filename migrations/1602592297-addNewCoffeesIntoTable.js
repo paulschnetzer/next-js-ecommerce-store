@@ -45,5 +45,5 @@ exports.up = async (sql) => {
 
 exports.down = async (sql) => {
   await sql`
-	DELETE FROM coffees;`;
+	DELETE * FROM coffees;`;
 };

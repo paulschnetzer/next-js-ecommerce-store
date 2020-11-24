@@ -30,7 +30,7 @@ export default function LandingPage() {
 
       <section>
         <div className="gridcontainer">
-          <div className="grid1">
+          <div className="item">
             <Link href="/1">
               <a>
                 <div className="gridItemContainer">
@@ -44,7 +44,7 @@ export default function LandingPage() {
             </Link>
           </div>
 
-          <div className="grid2">
+          <div className="item">
             <Link href="/2">
               <a>
                 <div className="gridItemContainer">
@@ -57,7 +57,7 @@ export default function LandingPage() {
               </a>
             </Link>
           </div>
-          <div className="grid3">
+          <div className="item">
             <Link href="/3">
               <a>
                 <div className="gridItemContainer">
@@ -70,7 +70,7 @@ export default function LandingPage() {
               </a>
             </Link>
           </div>
-          <div className="grid4">
+          <div className="item">
             <Link href="/4">
               <a>
                 <div className="gridItemContainer">
@@ -84,7 +84,7 @@ export default function LandingPage() {
               </a>
             </Link>
           </div>
-          <div className="grid5">
+          <div className="item">
             <Link href="/5">
               <a>
                 <div className="gridItemContainer">
@@ -97,7 +97,7 @@ export default function LandingPage() {
               </a>
             </Link>
           </div>
-          <div className="grid6">
+          <div className="item">
             <Link href="/6">
               <a>
                 <div className="gridItemContainer">
